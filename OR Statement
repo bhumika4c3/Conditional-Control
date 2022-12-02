@@ -1,0 +1,22 @@
+declare
+    n_numb number := &Number;
+    begin
+    if n_numb < 5 then goto small_number;
+    else goto large_number;
+     end if;
+  
+     n_numb := 25; -- goto jumps this line.
+ 
+    <<small_number>>
+    dbms_output.put_line ('Small Number.');
+   goto end_message;
+     <<large_number>>
+     dbms_output.put_line ('Large Number.');
+     goto end_message;
+
+     n_numb := 0;  -- goto jumps this line.
+ 
+     <<end_message>>
+    dbms_output.put_line ('The End.');
+ 
+   end;
